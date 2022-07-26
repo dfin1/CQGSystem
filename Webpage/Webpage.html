@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Clarifying Question Generation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,
+    h1 {
+      font-family: "Raleway", Arial, sans-serif
+    }
+
+    h1 {
+      letter-spacing: 6px
+    }
+
+    .w3-row-padding img {
+      margin-bottom: 12px
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="body-content w3-content">
+
+
+    <div class="img-row">
+      <div class="img-column">
+        <a href="https://www.umass.edu/" class="img-wrapper" target="_blank">
+          <img src="img/UMassLogo.png" alt="UMass" class="img-logo">
+        </a>
+      </div>
+      <div class="img-column">
+        <a href="https://www.fh-salzburg.ac.at/en/" class="img-wrapper" target="_blank">
+          <img src="img/FHLogo.png" alt="FHSalzburg" class="img-logo">
+        </a>
+      </div>
+      <div class="img-column">
+        <a href="http://ciir.cs.umass.edu/" class="img-wrapper" target="_blank">
+          <img src="img/CIIRnew2015_onecolor.png" alt="CIIR" class="img-logo">
+        </a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-panel w3-center w3-opacity element_separation">
+
+      <h1 class="header-top">Generating Clarification Questions</h1>
+      <h1 class="w3-xlarge">Specify Query</h1>
+      <!--
+
+        <div class="w3-padding-32">
+          <div class="w3-bar w3-border">
+            <a href="#" class="w3-bar-item w3-button">Model 1</a>
+            <a href="#" class="w3-bar-item w3-button w3-light-grey">Model 2</a>
+            <a href="#" class="w3-bar-item w3-button">Model 3</a>
+          </div>
+        </div>
+      -->
+    </header>
+
+    <div style="margin-bottom: 5em;" class="w3-panel w3-center w3-opacity element_separation">
+      <form onsubmit="event.preventDefault();submitRequest();" role="search">
+        <label for="search">Query</label>
+        <input id="search" type="search" placeholder="Query" autofocus required />
+        <button type="submit"><i class="fa fa-angle-right submit-icon"></i></button>
+      </form>
+
+
+      <div id="loading"></div>
+
+      <div id="error" class="errorMsg">
+        <h2> Oops! something went wrong :( </h2>
+        <h3> Please try again later. </h3>
+        </div>
+
+      <div id="textarea" class="textarea-element">
+        <p id="clariq" class="ClariQ-Element"></p>
+
+        <div class="clariFascets">
+          <div id="bestFascets" class="w3-bar w3-border">
+
+          </div>
+
+          
+        </div>
+
+
+
+
+        <button type="button" class="collapsible"><a id="btn_text" class="showContent">Show Details</a>
+          <i id="col_icon" class="collapse_icon fa fa-angle-up fa-rotate-180"></i>
+        </button>
+        <div id="content" class="content">
+          <div id="bestFascets-full" class="w3-bar w3-border">
+
+          </div>
+          <div id="text" type="textarea" name="text" cols="35" rows="4" class="textarea-content"></div>
+          
+          <div class="w3-padding-16">
+            <div class="w3-bar w3-border">
+              <a id="copyBtn" href="#" class="w3-bar-item w3-button">Copy Content</a>
+            </div>
+          </div>
+
+
+
+        </div>
+          
+      </div>
+    </div>
+
+
+
+
+    <!-- Photo Grid -->
+    <div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
+      <div class="w3-half">
+
+      </div>
+
+      <div class="w3-half">
+
+      </div>
+    </div>
+
+    <!-- End Page Content -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-wrapper w3-container w3-light-grey w3-center w3-large">
+    <div class="footer-content">
+      <a href="mailto:contact@fingerlos.eu" title="Mailto" target="_blank">
+        <i class="fa fa-envelope w3-hover-opacity"></i>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/david-f-7025808a" title="Linkedin" target="_blank">
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </a>
+
+      <p class="footer-text">Created from <a href="https://fingerlos.eu/" target="_blank" class="w3-hover-text-green">David Fingerlos</a></p>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
+
+</body>
+
+</html>

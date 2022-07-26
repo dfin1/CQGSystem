@@ -1,0 +1,391 @@
+/*source: https://codepen.io/liamj/pen/vYYLGZj*/
+
+
+:root {
+    --rad: 2.5rem;
+    --rad-light: 0.9rem;
+    --dur: 0.3s;
+    --color-dark: #eeeeee;
+    --color-dark-text: #878787;
+    --color-light: #fff;
+    --color-brand: #b91b1b;
+    --font-fam: 'Lato', sans-serif;
+    --height: 5rem;
+    --btn-width: 6rem;
+    --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+body {
+    background: var(--color-dark);
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    position: relative;
+    margin: 0 8px 0 8px;
+    padding-bottom: 7%;
+}
+.body-content{
+    height: 80%;
+}
+a{
+  text-decoration:none;
+}
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 10px;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+form {
+    position: relative;
+    max-width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--color-brand);
+    border-radius: var(--rad);
+    text-align: left;
+}
+input, button {
+    height: var(--height);
+    font-family: var(--font-fam);
+    border: 0;
+    color: var(--color-dark-text);
+    font-size: 1.8rem;
+}
+input[type="search"] {
+    outline: 0;
+    width: 100%;
+    background: var(--color-light);
+    padding: 0 1.6rem;
+    border-radius: var(--rad);
+    appearance: none;
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius, box-shadow;
+    z-index: 1;
+    position: relative;
+    border: 1px solid;
+    border-color: rgba(193,193,193,1);
+    box-shadow:none;
+}
+input[type="search"]:focus {
+    box-shadow: 0 0px 20px rgb(32 33 36 / 26%);
+}
+
+
+button {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--btn-width);
+    font-weight: bold;
+    background: var(--color-brand);
+    border-radius: 0 var(--rad) var(--rad) 0;
+    font-size: 2.2em;
+}
+.submit-icon{
+    color:#ffffff;
+}
+input:not(:placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+}
+input:not(:placeholder-shown) + button {
+    display: block;
+}
+label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+.footer-wrapper{
+  height: 7%;
+  width: 100%;
+  /* position: fixed; */
+  display: flex;
+  bottom: 0;
+  position: absolute;
+}
+
+.footer-text{
+  margin:0;
+  margin-top: 0.3em;
+}
+
+.footer-content{
+ margin: auto;
+}
+
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    border-radius: 50em;
+    background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  input[type="search"]:focus::-webkit-search-cancel-button {
+    opacity: .3;
+    pointer-events: all;
+  }
+  
+  input[type="search"].dark::-webkit-search-cancel-button {
+    filter: invert(1);
+  }
+  .textarea-element{
+    margin-top: 0.5em;
+  }
+  .textarea-content{
+    resize: none;
+    outline: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 0.4em 0.8em;
+    border-radius: var(--rad-light);
+    appearance: none;
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius, box-shadow;
+    z-index: 1;
+    position: relative;
+    /* border: 1px solid; */
+    border-color: rgba(193,193,193,1);
+    box-shadow: none;
+    white-space: pre-wrap;
+    text-align: left;
+  }
+  .textarea-content:focus{
+    box-shadow: 0 0px 20px rgb(32 33 36 / 26%);
+  }
+
+  .w3-xlarge {
+    font-size: 24px!important;
+    margin-top: 1.5em;
+  }
+  .header-top {
+    padding-top: 12%;
+  }
+
+  #textarea{
+    display: none;
+  }
+
+  #error{
+    display: none;
+  }
+
+  /* creating css loader */
+
+#loading {
+    width: 10rem;
+    height: 10rem;
+    border: 5px solid #f4f4f4;
+    border-top: 6px solid #878787;
+    border-radius: 100%;
+    margin: auto;
+    animation: spin 1.5s infinite linear;
+    margin-top: 5em;
+    display: none;
+}
+#loading.display {
+    visibility: visible;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ClariQ-Element {
+    font-size: 2rem;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.clariFascets{
+    margin-bottom: 3em;
+}
+
+.img-column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  
+  /* Clearfix (clear floats) */
+  .img-row::after {
+    content: "";
+    clear: both;
+    display: table;
+    box-sizing: border-box;
+  }
+  .img-row {
+    padding-top: 5%;
+  }
+
+  .img-logo{
+    max-height: 8em;
+  }
+  .img-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .element_separation {
+    padding: 24px 16px 24px 16px;
+  }   
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible, .collapsible2 {
+  background-color: #eeeeee;
+  color: #878787;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  width: 20%;
+  border: none;
+  border: 1px solid;
+  border-color: rgba(193,193,193,1);
+  outline: none;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  display: block;
+  border-radius: 0;
+  margin-left: auto;
+  position: relative;
+  margin-right: auto;
+  text-indent: 0px; 
+  transition: width 0.5s;
+  }
+  
+ .collapsible:hover {
+    /*color: #000!important;*/
+    background-color: #ccc!important;
+  }
+  .active{
+    width: 100%;
+    border-bottom: 1px solid;
+    border-bottom: 0;
+    border-color: rgba(193,193,193,1);
+    /*background-color: rgb(228, 228, 228)!important;*/
+  }
+  
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #eeeeee;
+    /*border: 1px solid;
+    border-color: rgba(193,193,193,1);
+    border-top: 0;*/
+  }
+
+
+  .content_active {
+    border: 1px solid;
+    border-color: rgba(193,193,193,1);
+    border-top: 0;
+    color: #878787;
+
+  }
+  .w3-text-green, .w3-hover-text-green:hover {
+    color: #8d0000!important;
+  }
+
+
+  .collapse_icon{
+    font-size: 28px!important;
+    margin-top: -0.3em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+  }
+
+  .collapse_icon_active{
+    font-size: 38px!important;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: -0.1em;
+    
+  }
+
+  .hideContent{
+    display: none;
+    transform: display 0s 0.5s;
+  }
+  .showContent{
+    display: block;
+    transform: display 0s 0.5s;
+  }
+
+  .errorMsg{
+    margin-top: 4em;
+  }
+  .w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+    color: #000!important;
+    background-color: #f4f4f4!important;
+  }
+
+
+
+  @media only screen and (max-width: 635px) {
+    .img-logo {
+      max-height: 5em;
+      margin-left: 11%;
+      margin-right: 11%;
+    }
+
+    .img-row {
+      margin-left: 10%;
+      padding-top: 5%;
+      margin-right: 10%;
+      padding-bottom: 5%;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+    .w3-xlarge {
+      font-size: 16px!important;
+    }
+    .collapsible {
+      height: 5em;
+      width: 7em;
+    }
+    body {
+      background: var(--color-dark);
+      padding-bottom: 10%;
+    }
+    .footer-wrapper{
+      height: 10%;
+      bottom: 0;
+    }
+    .footer-text{
+      margin-top: 0.1em;
+    }
+    .header-top {
+      padding-top: 2%;
+      font-size: 1.7em;
+      font-weight: 600;
+      letter-spacing: 8px;
+    }
+    .element_separation {
+      padding: 12px 16px 12px 16px;
+    }
+
+  }
