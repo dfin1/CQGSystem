@@ -74,5 +74,5 @@ except:
 # In[ ]:
 
 
-df.to_csv("DF_MIMICS_ConstructedFascets")
+df.to_csv("../Data/DF_MIMICS_ConstructedFascets")
 
